@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/kefir
+    ports:
+      - 8080:8000
+    image: app:kefir_image
+    container_name: kefir_container
+    command: python manage.py runserver 0.0.0.0:8000
+      
